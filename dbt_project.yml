@@ -36,3 +36,12 @@ models:
       +materialized: view
     ods:
       +materialized: view
+    dwh:
+      +materialized: table
+
+seeds:
+  dbt_nubita_practicas:
+    dwh_cli_t_fact_beverage_sales_data_categorizados:
+      file: dwh_cli_t_fact_beverage_sales_data_categorizados.csv
+    dwh_cli_t_fact_beverage_sales_data_summary:
+      file: dwh_cli_t_fact_beverage_sales_data_summary.csv

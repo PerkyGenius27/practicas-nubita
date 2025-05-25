@@ -1,0 +1,26 @@
+version: 2
+
+seeds:
+  - name: dwh_cli_t_fact_beverage_sales_data_categorizados
+    description: "Tabla con la asignación de clústers a cada cliente"
+    columns:
+      - name: customer_id
+      - name: cluster_id
+      - name: cluster_label
+
+  - name: dwh_cli_t_fact_beverage_sales_data_summary
+    description: "Estadísticas agregadas por clúster"
+    columns:
+      - name: unique_customers
+      - name: num_orders
+      - name: total_quantity
+      - name: total_spent
+      - name: avg_unit_price
+      - name: avg_discount
+      - name: top_regions_per_order
+      - name: top_categories_per_order
+      - name: top_products_per_order
+      - name: top_regions_by_volume
+      - name: top_categories_by_volume
+      - name: top_products_by_volume
+      - name: top_product_pairs_by_customer
