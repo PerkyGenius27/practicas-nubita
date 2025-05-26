@@ -12,3 +12,12 @@ models:
         description: Puntuación total del producto para ese cliente, combinando múltiples fuentes (co-ocurrencia y cluster).
       - name: ranking
         description: Ranking del producto recomendado para el cliente (1 = más recomendado).
+  
+  - name: recommendation_evaluation
+    description: Evaluación de recomendaciones usando nDCG basado en total_quantity.
+    columns:
+      - name: customer_id
+      - name: dcg
+      - name: ideal_dcg
+      - name: ndcg
+        description: "Normalized Discounted Cumulative Gain — mide la calidad del ranking recomendado"
