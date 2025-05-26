@@ -4,6 +4,7 @@ WITH recommended AS (
         product,
         ranking AS predicted_rank
     FROM {{ ref('customer_recommendations') }}
+    WHERE recommendation_type = 'cross_sell'
 ),
 
 actuals AS (
@@ -13,6 +14,7 @@ actuals AS (
         total_quantity,
         ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY total_quantity DESC) AS actual_rank
     FROM {{ ref('ods_cli_l6_v_beverage_sales_data_categorizados') }}
+    WHERE total_quantity < 25
 ),
 
 combined AS (
