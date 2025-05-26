@@ -38,6 +38,10 @@ models:
       +materialized: view
     dwh:
       +materialized: table
+    recommendations:
+      +materialized: table
+
+
 
 seeds:
   dbt_nubita_practicas:

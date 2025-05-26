@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: customer_recommendations
+    description: >
+      Top 10 productos recomendados por cliente, combinando productos frecuentemente co-comprados
+      y productos populares dentro del mismo cluster de comportamiento.
+    columns:
+      - name: customer_id
+      - name: product
+      - name: score
+        description: Puntuación total del producto para ese cliente, combinando múltiples fuentes (co-ocurrencia y cluster).
+      - name: ranking
+        description: Ranking del producto recomendado para el cliente (1 = más recomendado).
